@@ -1,0 +1,35 @@
+@import "../vars.scss";
+
+.container {
+  background-color: floralwhite;
+  padding-bottom: 3rem;
+}
+
+.articles {
+  background-color: white;
+  margin: 2rem 1rem;
+  padding: 1rem;
+  box-shadow: $bisqueShadow;
+}
+
+.title {
+  font-weight: normal;
+  margin: 0 0 2rem 1rem;
+}
+
+.list {
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  a {
+    color: cornflowerblue;
+    font-size: 23px;
+    &:hover {
+      color: lightblue;
+    }
+  }
+}
