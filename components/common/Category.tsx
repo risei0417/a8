@@ -1,10 +1,11 @@
+import { CategoryArticlesModel, CategoryModel } from "models/CategoryModel";
 import { useRouter } from "next/dist/client/router";
 import { useMemo } from "react";
 import styles from "styles/common/Category.module.scss";
 import { lineBreak } from "utils/lineBreak";
 
 type Props = {
-  data: any;
+  data: CategoryModel;
 };
 
 export const Category = (props: Props) => {
@@ -16,18 +17,19 @@ export const Category = (props: Props) => {
   return (
     <>
       <style>{data.style}</style>
-      <div className={styles.container}>
+      <div id="container" style={{ paddingBottom: "3rem" }}>
         <div id="wrapper">
+          {/* eslint-disable-next-line */}
           <img id="main-image" src={data.mainImage} />
           <span id="main-label">{data.mainLabel}</span>
         </div>
-        <div className={styles.articles}>
+        <div id="articles" className={styles.articles}>
           <h2 className={styles.title}>Articles</h2>
           {articles.length === 0 ? (
             <div className="center">まだ記事がありません</div>
           ) : (
             <ol className={styles.list}>
-              {articles.map((article: any) => {
+              {articles.map((article: CategoryArticlesModel) => {
                 return (
                   <li key={article.link}>
                     <a
@@ -38,7 +40,7 @@ export const Category = (props: Props) => {
                     >
                       {article.title}
                     </a>
-                    <span>{lineBreak(article.description ?? '')}</span>
+                    <span>{lineBreak(article.description ?? "")}</span>
                   </li>
                 );
               })}

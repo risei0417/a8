@@ -1,6 +1,7 @@
 import { Category } from "components/common/Category";
 import { CommonConstant } from "constants/common";
 import { DefaultLayout } from "layout/default";
+import { CategoryModel } from "models/CategoryModel";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import { Parts404 } from "parts/404";
@@ -12,7 +13,7 @@ const Common = () => {
 
   const [category, setCategory] = useState<string>("");
 
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<CategoryModel>();
 
   useEffect(() => {
     if (!router.isReady) {
