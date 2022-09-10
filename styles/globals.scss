@@ -1,8 +1,4 @@
-$backgroundColor: white;
-$shadow: 1px 1px 5px 1px lightgray;
-$themeColor: gray;
-$headerHeight: 3rem;
-$footerHeight: 3rem;
+@import "vars.scss";
 
 html,
 body {
@@ -64,6 +60,7 @@ a {
   height: $headerHeight;
   background-color: ghostwhite;
   box-shadow: $shadow;
+  z-index: 1000;
 }
 
 .footer {
