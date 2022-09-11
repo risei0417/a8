@@ -31,13 +31,16 @@ export const Category = (props: Props) => {
             <ol className={styles.list}>
               {articles.map((article: CategoryArticlesModel) => {
                 return (
-                  <li key={article.link}>
+                  <li key={article.link} className="animate__shakeX">
                     <a
+                      className="left"
                       style={{ cursor: "pointer" }}
                       onClick={() =>
                         router.push(`/common/${data.id}/${article.link}`)
                       }
                     >
+                      {/* eslint-disable-next-line */}
+                      <img src={article.banner} alt="banner" />
                       {article.title}
                     </a>
                     <span>{lineBreak(article.description ?? "")}</span>
