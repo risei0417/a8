@@ -1,3 +1,6 @@
+import { Index } from "components/Index";
+import { CommonConstant } from "constants/common";
+import { DefaultLayout } from "layout/default";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -5,16 +8,13 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>markone</title>
+        <title>ホーム | {CommonConstant.APP_NAME}</title>
         <meta name="description" content="markone" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', backgroundColor: 'lightgray'}}>
-          <h1>準備中です...</h1>
-        </div>
-      </main>
+      <DefaultLayout>
+        <Index />
+      </DefaultLayout>
     </>
   );
 };
