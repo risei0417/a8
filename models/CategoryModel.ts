@@ -10,6 +10,7 @@ export type CategoryModel = {
 };
 
 export type CategoryArticlesModel = {
+  banner?: string;
   description?: string;
   link?: string;
   title?: string;
