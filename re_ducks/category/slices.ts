@@ -7,7 +7,7 @@ const slice = createSlice({
   initialState: initialCategoryState,
   reducers: {
     save(_: CategoryType, action: PayloadAction<CategoryType>) {
-      return action.payload;
+      return { ...action.payload, lastSearched: Date.now() };
     },
   },
 });

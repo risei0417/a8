@@ -9,4 +9,5 @@ export const initialCategoryState: CategoryType = {
   mainLabel: "",
   style: "",
   title: "",
+  lastSearched: 0,
 };

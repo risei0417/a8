@@ -7,6 +7,9 @@ export type CategoryType = {
   mainLabel?: string;
   style?: string;
   title?: string;
+
+  // for front
+  lastSearched?: number;
 };
 
 export type CategoryArticleType = {

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "re_ducks/store";
 import { categoryOperations } from "re_ducks/category";
+import { searchAgain } from "utils/time";
 
 const Common = () => {
   const router = useRouter();
@@ -26,8 +27,12 @@ const Common = () => {
       const value = router.query.category ?? "";
       return Array.isArray(value) ? value[0] : value;
     })();
+
     setCategory(value);
-    dispatch(categoryOperations.fetchDataList({ category: value }));
+
+    if (searchAgain(data.id != value, data.lastSearched ?? 0)) {
+      dispatch(categoryOperations.fetchDataList({ category: value }));
+    }
 
     // eslint-disable-next-line
   }, [router.isReady]);
