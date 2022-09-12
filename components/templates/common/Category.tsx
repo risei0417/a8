@@ -1,11 +1,11 @@
-import { CategoryArticlesModel, CategoryModel } from "models/CategoryModel";
 import { useRouter } from "next/dist/client/router";
 import { useMemo } from "react";
+import { CategoryArticleType, CategoryType } from "re_ducks/category/types";
 import styles from "styles/common/Category.module.scss";
 import { lineBreak } from "utils/lineBreak";
 
 type Props = {
-  data: CategoryModel;
+  data: CategoryType;
 };
 
 export const Category = (props: Props) => {
@@ -29,7 +29,7 @@ export const Category = (props: Props) => {
             <div className="center">まだ記事がありません</div>
           ) : (
             <ol className={styles.list}>
-              {articles.map((article: CategoryArticlesModel) => {
+              {articles.map((article: CategoryArticleType) => {
                 return (
                   <li key={article.link} className="animate__shakeX">
                     <a

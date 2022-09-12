@@ -1,4 +1,4 @@
-import { Index } from "components/Index";
+import { Index } from "components/templates/Index";
 import { CommonConstant } from "constants/common";
 import { DefaultLayout } from "layout/default";
 import type { NextPage } from "next";
