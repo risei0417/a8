@@ -18,6 +18,7 @@ export const Header = () => {
           style={{ cursor: "pointer" }}
         >
           <div style={{ width: "32px", height: "32px", margin: "0 1rem" }}>
+            {/* eslint-disable-next-line */}
             <img src="/logo.png" alt="logo" />
           </div>
           <h1 style={{ fontSize: "23px", fontWeight: "normal" }}>

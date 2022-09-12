@@ -1,4 +1,4 @@
-import { Parts404 } from "parts/404";
+import { Parts404 } from "components/organisms/404";
 
 const Error404 = () => {
   return <Parts404 />;

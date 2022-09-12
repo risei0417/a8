@@ -1,9 +1,9 @@
-import { Article } from "components/common/category/Article";
+import { Article } from "components/templates/common/category/Article";
 import { CommonConstant } from "constants/common";
 import { DefaultLayout } from "layout/default";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
-import { Loading } from "parts/Loading";
+import { Loading } from "components/atoms/Loading";
 import { useEffect, useState } from "react";
 
 const Common = () => {
