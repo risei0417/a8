@@ -2,7 +2,7 @@ import { motion, Variants } from "framer-motion";
 import styles from "styles/Index.module.scss";
 import { Welcome } from "components/molecules/Welcome";
 import { useMemo } from "react";
-import { useRouter } from "next/dist/client/router";
+import { Categories } from "components/molecules/Categories";
 
 export const Index = () => {
   const cardVariants: Variants = useMemo(() => {
@@ -28,7 +28,7 @@ export const Index = () => {
         <h2>Info</h2>
         <div>
           <div>
-            <small>2022.8.12</small>
+            <small>2022.9.13</small>
             <small>サイト開設しました!</small>
             <small>Yhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!</small>
           </div>
@@ -39,10 +39,10 @@ export const Index = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
-          className={styles.categories}
         >
-          <motion.div variants={cardVariants}>
+          <motion.div className={styles.categories} variants={cardVariants}>
             <h2>Categories</h2>
+            <Categories />
           </motion.div>
         </motion.div>
       </section>
