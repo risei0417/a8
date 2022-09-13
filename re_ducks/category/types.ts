@@ -1,5 +1,6 @@
 export type CategoryType = {
   articles?: CategoryArticleType[];
+  icon?: string;
   content?: string;
   description?: string;
   id?: string;

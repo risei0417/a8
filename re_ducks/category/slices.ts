@@ -3,7 +3,7 @@ import { initialCategoryState } from "re_ducks/category/initializes";
 import { CategoryType } from "re_ducks/category/types";
 
 const slice = createSlice({
-  name: "admin",
+  name: "category",
   initialState: initialCategoryState,
   reducers: {
     save(_: CategoryType, action: PayloadAction<CategoryType>) {
