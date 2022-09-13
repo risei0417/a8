@@ -1,0 +1,1 @@
+export { default as categoriesOperations } from "./operations";
