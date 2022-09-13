@@ -10,6 +10,8 @@ export type CategoryType = {
 
   // for front
   lastSearched?: number;
+  loading: boolean;
+  error: boolean;
 };
 
 export type CategoryArticleType = {

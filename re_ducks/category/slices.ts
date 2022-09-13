@@ -7,8 +7,11 @@ const slice = createSlice({
   initialState: initialCategoryState,
   reducers: {
     save(_: CategoryType, action: PayloadAction<CategoryType>) {
-      return { ...action.payload, lastSearched: Date.now() };
+      return { ...action.payload, lastSearched: Date.now(), loading: false, error: false };
     },
+    error() {
+      return { loading: false, error: true};
+    }
   },
 });
 

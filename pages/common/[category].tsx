@@ -4,12 +4,12 @@ import { DefaultLayout } from "layout/default";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import { Parts404 } from "components/organisms/404";
-import { Loading } from "components/atoms/Loading";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "re_ducks/store";
 import { categoryOperations } from "re_ducks/category";
 import { searchAgain } from "utils/time";
+import { Progress } from "components/organisms/Progress";
 
 const Common = () => {
   const router = useRouter();
@@ -18,6 +18,7 @@ const Common = () => {
   const [category, setCategory] = useState<string>("");
 
   const data = useSelector((state: RootState) => state.category);
+
   useEffect(() => {
     if (!router.isReady) {
       return;
@@ -37,12 +38,12 @@ const Common = () => {
     // eslint-disable-next-line
   }, [router.isReady]);
 
-  if (!category || !data) {
-    return <Loading />;
+  if (data.error) {
+    return <Parts404 />;
   }
 
-  if (!Object.keys(data).length) {
-    return <Parts404 />;
+  if (data.loading) {
+    return <Progress />;
   }
 
   return (

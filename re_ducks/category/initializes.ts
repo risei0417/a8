@@ -10,4 +10,6 @@ export const initialCategoryState: CategoryType = {
   style: "",
   title: "",
   lastSearched: 0,
+  loading: true,
+  error: false,
 };
