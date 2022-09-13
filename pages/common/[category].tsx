@@ -1,56 +1,49 @@
-import { Category } from "components/common/Category";
+import { Category } from "components/templates/common/Category";
 import { CommonConstant } from "constants/common";
 import { DefaultLayout } from "layout/default";
-import { CategoryModel } from "models/CategoryModel";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
-import { Parts404 } from "parts/404";
-import { Loading } from "parts/Loading";
+import { Parts404 } from "components/organisms/404";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "re_ducks/store";
+import { categoryOperations } from "re_ducks/category";
+import { searchAgain } from "utils/time";
+import { Progress } from "components/organisms/Progress";
 
 const Common = () => {
   const router = useRouter();
+  const dispatch: AppDispatch = useDispatch();
 
   const [category, setCategory] = useState<string>("");
 
-  const [data, setData] = useState<CategoryModel>();
+  const data = useSelector((state: RootState) => state.category);
 
   useEffect(() => {
     if (!router.isReady) {
       return;
     }
 
-    const c = router.query.category ?? "";
-    setCategory(Array.isArray(c) ? c[0] : c);
-
-    (async () => {
-      try {
-        const res = await fetch(
-          `${CommonConstant.API_BASE_URL}/getArticles`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json; charset=utf-8",
-            },
-            body: JSON.stringify({ category: c }),
-          }
-        );
-
-        setData(await res.json());
-      } catch (_) {
-        setData({});
-      }
+    const value = (() => {
+      const value = router.query.category ?? "";
+      return Array.isArray(value) ? value[0] : value;
     })();
+
+    setCategory(value);
+
+    if (searchAgain(data.id != value, data.lastSearched ?? 0)) {
+      dispatch(categoryOperations.fetchDataList({ category: value }));
+    }
 
     // eslint-disable-next-line
   }, [router.isReady]);
 
-  if (!category || !data) {
-    return <Loading />;
+  if (data.error) {
+    return <Parts404 />;
   }
 
-  if (!Object.keys(data).length) {
-    return <Parts404 />;
+  if (data.loading) {
+    return <Progress />;
   }
 
   return (

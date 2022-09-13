@@ -1,5 +1,5 @@
-export type CategoryModel = {
-  articles?: CategoryArticlesModel[];
+export type CategoryType = {
+  articles?: CategoryArticleType[];
   content?: string;
   description?: string;
   id?: string;
@@ -7,9 +7,14 @@ export type CategoryModel = {
   mainLabel?: string;
   style?: string;
   title?: string;
+
+  // for front
+  lastSearched?: number;
+  loading: boolean;
+  error: boolean;
 };
 
-export type CategoryArticlesModel = {
+export type CategoryArticleType = {
   banner?: string;
   description?: string;
   link?: string;
