@@ -1,3 +1,4 @@
+import { Pending } from "components/atoms/Pending";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +14,7 @@ export const Categories = () => {
   const data = useSelector((state: RootState) => state.categories);
 
   useEffect(() => {
-    if (searchAgain((data.lastSearched ?? 0))) {
+    if (searchAgain(data.lastSearched ?? 0)) {
       dispatch(categoriesOperations.fetchDataList());
     }
     // eslint-disable-next-line
@@ -22,9 +23,17 @@ export const Categories = () => {
   return (
     <div>
       {(data.list ?? []).map((category) => {
+        if (category.pending) {
+          return <Pending />;
+        }
+
         return (
-          <div key={category.id} onClick={() => router.push(`/common/${category.id}`)} >
+          <div
+            key={category.id}
+            onClick={() => router.push(`/common/${category.id}`)}
+          >
             <span>{category.title}</span>
+            {/* eslint-disable-next-line */}
             <img src={category.icon} />
           </div>
         );
