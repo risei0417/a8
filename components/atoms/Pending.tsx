@@ -8,8 +8,9 @@ export const Pending = () => {
         style={{
           fontSize: "18px",
           listStyle: "none",
-          marginLeft: "3rem",
           color: "lightgrey",
+          width: "100%",
+          paddingRight: "1rem",
         }}
         animate={{ border: [1, 0, 0] }}
       >
