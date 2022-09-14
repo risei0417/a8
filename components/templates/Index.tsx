@@ -30,7 +30,7 @@ export const Index = () => {
           <div>
             <small>2022.9.13</small>
             <small>サイト開設しました!</small>
-            <small>Yhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!</small>
+            <small></small>
           </div>
         </div>
       </section>

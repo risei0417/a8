@@ -8,6 +8,7 @@ export type CategoryType = {
   mainLabel?: string;
   style?: string;
   title?: string;
+  pending?: boolean;
 
   // for front
   lastSearched?: number;
