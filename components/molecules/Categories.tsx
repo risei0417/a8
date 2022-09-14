@@ -24,7 +24,7 @@ export const Categories = () => {
     <div>
       {(data.list ?? []).map((category) => {
         if (category.pending) {
-          return <Pending />;
+          return <Pending key={category.id} />;
         }
 
         return (
