@@ -1,4 +1,4 @@
-import { CategoryType } from "re_ducks/category/types";
+import { CategoryType } from "re-ducks/category/types";
 
 export type CategoriesType = {
   list?: CategoryType[];

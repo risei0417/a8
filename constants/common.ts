@@ -1,9 +1,11 @@
 export class CommonConstant {
   public static APP_NAME = "marKone";
 
-  public static API_BASE_URL = "https://asia-northeast1-markone-5185b.cloudfunctions.net";
+  public static API_BASE_URL =
+    // "http://localhost:5001/markone-5185b/asia-northeast1";
+    "https://asia-northeast1-markone-5185b.cloudfunctions.net";
 
   public static COMMON_ROUTES = {
-    learnings: [],
+    learnings: ['udemy'],
   };
 }

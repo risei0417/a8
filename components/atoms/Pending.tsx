@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
-export const Pending = () => {
+type Props = {
+  title?: string;
+}
+
+export const Pending = (props: Props) => {
+  const { title } = props;
+
   return (
     <div style={{ cursor: "not-allowed" }}>
       <motion.ol
@@ -43,6 +49,7 @@ export const Pending = () => {
           .
         </motion.li>
       </motion.ol>
+      <span>{title}</span>
     </div>
   );
 };

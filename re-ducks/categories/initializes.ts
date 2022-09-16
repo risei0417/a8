@@ -1,4 +1,4 @@
-import { CategoriesType } from "re_ducks/categories/types";
+import { CategoriesType } from "re-ducks/categories/types";
 
 export const initialCategoriesState: CategoriesType = {
   list: [],

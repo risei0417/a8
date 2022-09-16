@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import categoriesSlices from "re_ducks/categories/slices";
-import categorySlices from "re_ducks/category/slices";
+import categoriesSlices from "re-ducks/categories/slices";
+import categorySlices from "re-ducks/category/slices";
 
 const rootReducer = combineReducers({
   categories: categoriesSlices,
