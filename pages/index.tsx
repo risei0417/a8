@@ -1,10 +1,9 @@
 import { Index } from "components/templates/Index";
 import { CommonConstant } from "constants/common";
-import { DefaultLayout } from "layout/default";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
@@ -12,11 +11,9 @@ const Home: NextPage = () => {
         <meta name="description" content="markone" />
       </Head>
 
-      <DefaultLayout>
-        <Index />
-      </DefaultLayout>
+      <Index />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
