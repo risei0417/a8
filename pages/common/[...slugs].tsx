@@ -5,11 +5,12 @@ import Head from "next/head";
 import { Parts404 } from "components/organisms/404";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "re_ducks/store";
-import { categoryOperations } from "re_ducks/category";
+import { AppDispatch, RootState } from "re-ducks/store";
+import { categoryOperations } from "re-ducks/category";
 import { searchAgain } from "utils/time";
 import { Progress } from "components/organisms/Progress";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { Article } from "components/templates/common/Article";
 
 type PathParams = {
   slugs: string[];
@@ -83,7 +84,7 @@ const Common = (props: Props) => {
       </Head>
 
       <DefaultLayout>
-        <Category data={data} />
+        {article ? <Article /> : <Category data={data} />}
       </DefaultLayout>
     </>
   );

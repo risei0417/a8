@@ -9,6 +9,7 @@ export type CategoryType = {
   style?: string;
   title?: string;
   pending?: boolean;
+  order?: number;
 
   // for front
   lastSearched?: number;

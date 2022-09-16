@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
-import { CategoryArticleType, CategoryType } from "re_ducks/category/types";
+import { CategoryArticleType, CategoryType } from "re-ducks/category/types";
 import styles from "styles/common/Category.module.scss";
-import { lineBreak } from "utils/lineBreak";
+import { lineBreak } from "utils/line-break";
 
 type Props = {
   data: CategoryType;

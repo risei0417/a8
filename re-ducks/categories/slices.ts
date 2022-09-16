@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialCategoriesState } from "re_ducks/categories/initializes";
-import { CategoriesType } from "re_ducks/categories/types";
-import { CategoryType } from "re_ducks/category/types";
+import { initialCategoriesState } from "re-ducks/categories/initializes";
+import { CategoriesType } from "re-ducks/categories/types";
+import { CategoryType } from "re-ducks/category/types";
 
 const slice = createSlice({
   name: "categories",

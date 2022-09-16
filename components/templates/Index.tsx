@@ -14,15 +14,15 @@ export const Index = () => {
         y: 0,
         transition: {
           type: "spring",
-          bounce: 0.4,
-          duration: 0.8,
+          bounce: 0.6,
+          duration: 1.1,
         },
       },
     };
   }, []);
 
   return (
-    <>
+    <div style={{backgroundColor: "snow", minHeight: "100vh"}}>
       <Welcome styles={styles} />
       <section className={styles.information}>
         <h2>Info</h2>
@@ -46,6 +46,7 @@ export const Index = () => {
           </motion.div>
         </motion.div>
       </section>
-    </>
+      <div className={styles.spacer} />
+    </div>
   );
 };

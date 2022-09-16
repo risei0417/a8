@@ -61,6 +61,20 @@ a {
   background-color: ghostwhite;
   box-shadow: $shadow;
   z-index: 1000;
+
+  .link {
+    margin: 0 1rem 0 auto;
+    cursor: pointer;
+    color: pink;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px red;
+
+    &:hover {
+      color: salmon;
+      scale: 1.1;
+    }
+  }
 }
 
 .footer {
