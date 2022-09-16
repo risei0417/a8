@@ -1,12 +1,13 @@
-import { Pending } from "components/atoms/Pending";
-import { useRouter } from "next/router";
+import { Pending } from "components/atoms/index/Pending";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesOperations } from "re-ducks/categories";
 import { AppDispatch, RootState } from "re-ducks/store";
 import { searchAgain } from "utils/time";
+import { useRouter } from "next/dist/client/router";
 
-export const Categories = () => {
+export const CategoriesMolecule = () => {
+
   const router = useRouter();
 
   const dispatch: AppDispatch = useDispatch();

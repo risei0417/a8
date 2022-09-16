@@ -1,16 +1,15 @@
-import { Category } from "components/templates/common/Category";
 import { CommonConstant } from "constants/common";
-import { DefaultLayout } from "layout/default";
 import Head from "next/head";
-import { Parts404 } from "components/organisms/404";
+import { _404 } from "components/templates/_404";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "re-ducks/store";
 import { categoryOperations } from "re-ducks/category";
 import { searchAgain } from "utils/time";
-import { Progress } from "components/organisms/Progress";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Article } from "components/templates/common/Article";
+import { ProgressTemplate } from "components/templates/ProgressTemplate";
+import { CategoryTemplate } from "components/templates/common/CategoryTemplate";
 
 type PathParams = {
   slugs: string[];
@@ -67,11 +66,11 @@ const Common = (props: Props) => {
   }, []);
 
   if (data.error) {
-    return <Parts404 />;
+    return <_404 />;
   }
 
   if (data.loading) {
-    return <Progress />;
+    return <ProgressTemplate />;
   }
 
   return (
@@ -83,9 +82,7 @@ const Common = (props: Props) => {
         <meta name="description" content={data.description} />
       </Head>
 
-      <DefaultLayout>
-        {article ? <Article /> : <Category data={data} />}
-      </DefaultLayout>
+        {article ? <Article /> : <CategoryTemplate data={data} />}
     </>
   );
 };
