@@ -11,7 +11,7 @@ export const ArticleOrganism = (props: Props) => {
   const { data } = props;
 
   return (
-    <div className={styles.wrapper}>
+    <div id="wrapper" className={styles.wrapper}>
       <section className={styles.article}>
         <Main
           mainTitle={data.mainTitle}

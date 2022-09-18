@@ -24,7 +24,6 @@ export default function Document() {
         <meta httpEquiv="content-language" content="ja" />
         <meta name="application-name" content="markone" />
         <meta name="author" content="markone3to1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
