@@ -1,14 +1,18 @@
+import Link from "next/link";
+
 type Props = {
-  onClick: () => void;
+  url: string;
   name?: string;
-}
+};
 
 export const HeaderLink = (props: Props) => {
-  const { onClick, name } = props;
+  const { url, name } = props;
 
   return (
-    <a onClick={onClick} className="center link">
-      {name}
-    </a>
+    <Link href={url}>
+      <a className="center link">
+        {name}
+      </a>
+    </Link>
   );
 };
