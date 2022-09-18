@@ -1,9 +1,21 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html>
       <Head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-J7MNFPHZLX"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-J7MNFPHZLX');`,
+          }}
+        />
         <meta httpEquiv="content-type" content="text/html" />
         <meta httpEquiv="content-language" content="ja" />
         <meta name="application-name" content="markone" />
