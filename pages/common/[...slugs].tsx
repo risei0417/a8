@@ -98,6 +98,22 @@ const Common = (props: Props) => {
           name="description"
           content={article ? articleData.description : categoryData.description}
         />
+        <meta
+          property="og:title"
+          content={article ? articleData.title : categoryData.title}
+        />
+        <meta
+          property="og:description"
+          content={article ? articleData.description : categoryData.description}
+        />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content={article ? articleData.mainImage : categoryData.mainImage}
+        />
+        <meta property="og:url" content={location.href} />
+        <meta property="og:site_name" content={CommonConstant.APP_NAME} />
+        <meta property="og:locale" content="ja_JP" />
       </Head>
 
       {article ? (
