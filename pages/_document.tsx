@@ -3,7 +3,7 @@ import Script from "next/script";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="ja">
       <Head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-J7MNFPHZLX"

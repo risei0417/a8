@@ -1,4 +1,4 @@
-import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
 import { CategoryArticleType } from "re-ducks/category/types";
 import styles from "styles/common/Category.module.scss";
 import { lineBreak } from "utils/line-break";
@@ -11,8 +11,6 @@ type Props = {
 export const Articles = (props: Props) => {
   const { categoryId, dataList } = props;
 
-  const router = useRouter();
-
   return (
     <div id="articles" className={styles.articles}>
       <h2 className={styles.title}>Articles</h2>
@@ -23,18 +21,17 @@ export const Articles = (props: Props) => {
           {dataList.map((article: CategoryArticleType) => {
             return (
               <li key={article.link} className="animate__shakeX">
-                <a
-                  className="left"
-                  style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    router.push(`/common/${categoryId}/${article.link}`)
-                  }
-                >
-                  <picture>
-                    <img src={article.banner ?? ""} alt="banner" />
-                  </picture>
-                  {article.title}
-                </a>
+                <Link href={`/common/${categoryId}/${article.link}`}>
+                  <a
+                    className="left"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <picture>
+                      <img src={article.banner ?? ""} alt="banner#57" />
+                    </picture>
+                    {article.title}
+                  </a>
+                </Link>
                 <span>{lineBreak(article.description ?? "")}</span>
               </li>
             );
