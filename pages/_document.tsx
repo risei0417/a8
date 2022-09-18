@@ -10,6 +10,10 @@ export default function Document() {
           strategy="afterInteractive"
         />
         <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3899772527131729"
+          strategy="afterInteractive"
+        />
+        <Script
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
