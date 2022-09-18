@@ -19,7 +19,10 @@ export const Main = (props: Props) => {
         )}
         {mainContent && (
           <div id="main-content">
-            {mainContent?.split(" ").map((content, i) => {
+            {mainContent?.split("$n").map((content, i) => {
+              if (!content.trim()) {
+                return <br key={i} />;
+              }
               return <p key={i}>{content}</p>;
             })}
           </div>
