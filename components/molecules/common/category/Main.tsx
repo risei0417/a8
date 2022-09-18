@@ -9,7 +9,7 @@ export const Main = (props: Props) => {
   return (
     <div id="wrapper">
       <picture>
-        <img id="main-image" src={mainImage ?? ""} />
+        <img id="main-image" src={mainImage ?? ""} alt="main-image" />
       </picture>
       <span id="main-label">{mainLabel}</span>
     </div>
