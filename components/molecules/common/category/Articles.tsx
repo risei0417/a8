@@ -30,8 +30,9 @@ export const Articles = (props: Props) => {
                     router.push(`/common/${categoryId}/${article.link}`)
                   }
                 >
-                  {/* eslint-disable-next-line */}
-                  <img src={article.banner} alt="banner" />
+                  <picture>
+                    <img src={article.banner ?? ""} alt="banner" />
+                  </picture>
                   {article.title}
                 </a>
                 <span>{lineBreak(article.description ?? "")}</span>

@@ -34,8 +34,9 @@ export const CategoriesMolecule = () => {
             onClick={() => router.push(`/common/${category.id}`)}
           >
             <span>{category.title}</span>
-            {/* eslint-disable-next-line */}
-            <img src={category.icon} alt="icon" />
+            <picture>
+              <img src={category.icon ?? ''} alt="icon" />
+            </picture>
           </div>
         );
       })}

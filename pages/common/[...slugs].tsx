@@ -7,9 +7,10 @@ import { AppDispatch, RootState } from "re-ducks/store";
 import { categoryOperations } from "re-ducks/category";
 import { searchAgain } from "utils/time";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Article } from "components/templates/common/Article";
 import { ProgressTemplate } from "components/templates/ProgressTemplate";
 import { CategoryTemplate } from "components/templates/common/CategoryTemplate";
+import { ArticleTemplate } from "components/templates/common/ArticleTemplate";
+import { articleOperations } from "re-ducks/article";
 
 type PathParams = {
   slugs: string[];
@@ -56,20 +57,33 @@ const Common = (props: Props) => {
   const { category, article } = props;
   const dispatch: AppDispatch = useDispatch();
 
-  const data = useSelector((state: RootState) => state.category);
+  const categoryData = useSelector((state: RootState) => state.category);
+
+  const articleData = useSelector((state: RootState) => state.article);
 
   useEffect(() => {
-    if (searchAgain(data.lastSearched ?? 0, data.id != category)) {
-      dispatch(categoryOperations.fetchData(category));
+    if (
+      searchAgain(
+        article
+          ? articleData.lastSearched ?? 0
+          : categoryData.lastSearched ?? 0,
+        article ? articleData.id != article : categoryData.id != category
+      )
+    ) {
+      dispatch(
+        article
+          ? articleOperations.fetchData(`${category}-${article}`)
+          : categoryOperations.fetchData(category)
+      );
     }
     // eslint-disable-next-line
-  }, []);
+  }, [article]);
 
-  if (data.error) {
+  if (article ? articleData.error : categoryData.error) {
     return <_404 />;
   }
 
-  if (data.loading) {
+  if (article ? articleData.loading : categoryData.loading) {
     return <ProgressTemplate />;
   }
 
@@ -77,12 +91,20 @@ const Common = (props: Props) => {
     <>
       <Head>
         <title>
-          {data.title} | {CommonConstant.APP_NAME}
+          {article ? articleData.title : categoryData.title} |{" "}
+          {CommonConstant.APP_NAME}
         </title>
-        <meta name="description" content={data.description} />
+        <meta
+          name="description"
+          content={article ? articleData.description : categoryData.description}
+        />
       </Head>
 
-        {article ? <Article /> : <CategoryTemplate data={data} />}
+      {article ? (
+        <ArticleTemplate data={articleData} />
+      ) : (
+        <CategoryTemplate data={categoryData} />
+      )}
     </>
   );
 };
