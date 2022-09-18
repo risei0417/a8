@@ -8,8 +8,9 @@ export const Main = (props: Props) => {
 
   return (
     <div id="wrapper">
-      {/* eslint-disable-next-line */}
-      <img id="main-image" src={mainImage} />
+      <picture>
+        <img id="main-image" src={mainImage ?? ""} />
+      </picture>
       <span id="main-label">{mainLabel}</span>
     </div>
   );

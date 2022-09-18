@@ -3,7 +3,6 @@ import styles from "styles/Index.module.scss";
 import { motion, Variants } from "framer-motion";
 import { useMemo } from "react";
 import { CategoriesMolecule } from "components/molecules/index/CategoriesMolecule";
-import { CategoryType } from "re-ducks/category/types";
 
 export const CategoriesOrganism = () => {
 

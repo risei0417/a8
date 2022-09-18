@@ -1,12 +1,12 @@
 import { Action } from "@reduxjs/toolkit";
 import { CommonConstant } from "constants/common";
+import { actions } from "re-ducks/article/slices";
 import { Dispatch } from "react";
-import { actions } from "re-ducks/category/slices";
 
 export const fetchData = (id: string) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
-      const res = await fetch(`${CommonConstant.API_BASE_URL}/getCategory?id=${id}`, {
+      const res = await fetch(`${CommonConstant.API_BASE_URL}/getArticle?id=${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
