@@ -2,6 +2,7 @@
 
 @media screen and (min-width: 1007px) {
   .container {
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     height: 21rem;
@@ -25,6 +26,7 @@
 
 @media screen and (min-width: 640px) and (max-width: 1007px) {
   .container {
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     height: 14rem;
@@ -48,6 +50,7 @@
 
 @media screen and (max-width: 640px) {
   .container {
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     height: 6rem;
@@ -74,6 +77,7 @@
   padding: 1rem;
   height: 17rem;
   box-shadow: $shadow;
+  background-color: white;
 
   h2 {
     height: 2rem;
@@ -116,9 +120,10 @@
 }
 
 .categories {
-  margin: 2rem 2rem 5rem 2rem;
+  margin: 2rem 2rem 0 2rem;
   padding: 1rem;
   box-shadow: $shadow;
+  background-color: white;
 
   h2 {
     height: 3rem;
@@ -167,4 +172,8 @@
       }
     }
   }
+}
+
+.spacer {
+  height: 5rem;
 }

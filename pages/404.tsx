@@ -1,7 +1,7 @@
-import { Parts404 } from "components/organisms/404";
+import { _404 } from "components/templates/_404";
 
 const Error404 = () => {
-  return <Parts404 />;
+  return <_404 />;
 };
 
 export default Error404;

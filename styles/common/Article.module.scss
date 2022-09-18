@@ -1,0 +1,28 @@
+@import "../vars.scss";
+
+.wrapper {
+  min-height: 100vh;
+  width: 70%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: aliceblue;
+}
+
+.article {
+  background-color: white;
+  box-shadow: $shadow;
+  padding: 1rem;
+  border-radius: 5px;
+
+  h2 {
+    margin: 0;
+  }
+
+  hr {
+    border: solid 2px gainsboro;
+  }
+
+  p {
+    margin: 0;
+  }
+}
