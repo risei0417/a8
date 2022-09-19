@@ -10,7 +10,13 @@ type Props = {
 export const CategoryOrganism = (props: Props) => {
   const { data } = props;
 
-  const articles = useMemo(() => data.articles ?? [], [data.articles]);
+  const articles = useMemo(
+    () =>
+      data.articles
+        ?.filter((article) => !article.pending)
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) ?? [],
+    [data.articles]
+  );
 
   return (
     <div id="container" style={{ paddingBottom: "3rem" }}>

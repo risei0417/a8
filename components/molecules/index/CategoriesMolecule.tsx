@@ -39,7 +39,7 @@ export const CategoriesMolecule = () => {
               router.push(`/common/${category.id}`);
             }}
           >
-            <span>{category.title}</span>
+            <span>{category.indexTitle}</span>
             <picture>
               <img src={category.icon ?? ''} alt="icon" />
             </picture>
