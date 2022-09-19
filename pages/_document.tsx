@@ -1,3 +1,4 @@
+import { CommonConstant } from "constants/common";
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
@@ -22,8 +23,8 @@ export default function Document() {
         />
         <meta httpEquiv="content-type" content="text/html" />
         <meta httpEquiv="content-language" content="ja" />
-        <meta name="application-name" content="markone" />
-        <meta name="author" content="markone3to1" />
+        <meta name="application-name" content={CommonConstant.APP_NAME} />
+        <meta name="author" content={CommonConstant.MAIN_AUTHOR} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>

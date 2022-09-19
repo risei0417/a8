@@ -2,7 +2,6 @@ import { CategoryType } from "re-ducks/category/types";
 
 export const initialCategoryState: CategoryType = {
   articles: [],
-  content: "",
   description: "",
   id: "",
   mainImage: "",
