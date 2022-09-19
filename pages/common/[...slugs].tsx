@@ -11,6 +11,7 @@ import { ProgressTemplate } from "components/templates/ProgressTemplate";
 import { CategoryTemplate } from "components/templates/common/CategoryTemplate";
 import { ArticleTemplate } from "components/templates/common/ArticleTemplate";
 import { articleOperations } from "re-ducks/article";
+import { CategoryType } from "re-ducks/category/types";
 
 type PathParams = {
   slugs: string[];
@@ -22,22 +23,36 @@ type Props = {
 };
 
 export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
+  const res = await fetch(`${CommonConstant.API_BASE_URL}/getIndex`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+  const json = await res.json();
+
   return {
-    paths: Object.entries(CommonConstant.COMMON_ROUTES).reduce<
+    paths: json.categories.reduce(
       (
-        | string
-        | {
-            params: PathParams;
-            locale?: string | undefined;
-          }
-      )[]
-    >((r, [category, articles]) => {
-      r.push({ params: { slugs: [category] } });
-      articles.forEach((article) => {
-        r.push({ params: { slugs: [category, article] } });
-      });
-      return r;
-    }, []),
+        r: (
+          | string
+          | {
+              params: PathParams;
+              locale?: string | undefined;
+            }
+        )[],
+        category: CategoryType
+      ) => {
+        r.push({ params: { slugs: [category.id ?? ""] } });
+        category.articles?.forEach((article) => {
+          r.push({
+            params: { slugs: [category.id ?? "", article.link ?? ""] },
+          });
+        });
+        return r;
+      },
+      []
+    ),
     fallback: false,
   };
 };
@@ -114,7 +129,14 @@ const Common = (props: Props) => {
         <meta property="og:url" content={location.href} />
         <meta property="og:site_name" content={CommonConstant.APP_NAME} />
         <meta property="og:locale" content="ja_JP" />
-        <link rel="canonical" href={article ? `${CommonConstant.APP_URL}${category}/${article}/` : `${CommonConstant.APP_URL}${category}/`} />
+        <link
+          rel="canonical"
+          href={
+            article
+              ? `${CommonConstant.APP_URL}${category}/${article}/`
+              : `${CommonConstant.APP_URL}${category}/`
+          }
+        />
       </Head>
 
       {article ? (
