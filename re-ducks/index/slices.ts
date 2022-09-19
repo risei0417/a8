@@ -12,7 +12,7 @@ const slice = createSlice({
       );
 
       const information = (action.payload.information ?? []).sort(
-        (a: any, b: any) => a.order - b.order
+        (a: any, b: any) => b.date?._seconds - a.date?._seconds
       );
 
       return {
