@@ -17,6 +17,7 @@ const HomePage: NextPage = () => {
         <meta property="og:url" content={CommonConstant.APP_URL} />
         <meta property="og:site_name" content={CommonConstant.APP_NAME} />
         <meta property="og:locale" content="ja_JP" />
+        <link rel="canonical" href={CommonConstant.APP_URL} />
       </Head>
 
       <Index />

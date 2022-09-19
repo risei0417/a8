@@ -114,6 +114,7 @@ const Common = (props: Props) => {
         <meta property="og:url" content={location.href} />
         <meta property="og:site_name" content={CommonConstant.APP_NAME} />
         <meta property="og:locale" content="ja_JP" />
+        <link rel="canonical" href={article ? `${CommonConstant.APP_URL}${category}/${article}/` : `${CommonConstant.APP_URL}${category}/`} />
       </Head>
 
       {article ? (
