@@ -1,12 +1,17 @@
+import { CommonConstant } from "constants/common";
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="ja">
       <Head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-J7MNFPHZLX"
+          strategy="afterInteractive"
+        />
+        <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3899772527131729"
           strategy="afterInteractive"
         />
         <Script
@@ -18,9 +23,8 @@ export default function Document() {
         />
         <meta httpEquiv="content-type" content="text/html" />
         <meta httpEquiv="content-language" content="ja" />
-        <meta name="application-name" content="markone" />
-        <meta name="author" content="markone3to1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="application-name" content={CommonConstant.APP_NAME} />
+        <meta name="author" content={CommonConstant.MAIN_AUTHOR} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>

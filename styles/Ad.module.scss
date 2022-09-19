@@ -1,0 +1,40 @@
+@media screen and (min-width: 1007px) {
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 14fr 3fr;
+  }
+  .ad1 {
+    margin-left: auto;
+  }
+  .ad2 {
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1007px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 9fr 1fr;
+  }
+  .ad1 {
+    margin-left: auto;
+    scale: 0.8;
+  }
+  .ad2 {
+    margin-right: auto;
+    scale: 0.8;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .ad1 {
+    margin: 0 auto;
+  }
+  .ad2 {
+    margin: 0 auto;
+  }
+}
