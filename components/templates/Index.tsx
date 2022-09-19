@@ -1,5 +1,3 @@
-import styles from "styles/Index.module.scss";
-
 import { Welcome } from "components/organisms/index/Welcome";
 import { InformationOrganism } from "components/organisms/index/InformationOrganism";
 import { Header } from "components/organisms/Header";
@@ -12,11 +10,10 @@ export const Index = () => {
       <Header />
 
       <main className="main">
-        <div style={{ backgroundColor: "snow", minHeight: "100vh" }}>
-          <Welcome styles={styles} />
+        <div style={{ minHeight: "100vh" }}>
+          <Welcome />
           <InformationOrganism />
           <CategoriesOrganism />
-          <div className={styles.spacer} />
         </div>
       </main>
 
