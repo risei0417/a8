@@ -3,12 +3,13 @@ export type CategoryType = {
   icon?: string;
   description?: string;
   id?: string;
+  indexTitle?: string;
   mainImage?: string;
   mainLabel?: string;
+  order?: number;
+  pending?: boolean;
   style?: string;
   title?: string;
-  pending?: boolean;
-  order?: number;
 
   // for front
   lastSearched?: number;
@@ -20,5 +21,7 @@ export type CategoryArticleType = {
   banner?: string;
   description?: string;
   link?: string;
+  order?: number;
+  pending?: boolean;
   title?: string;
 };

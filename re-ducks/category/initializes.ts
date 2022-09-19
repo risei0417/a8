@@ -4,6 +4,7 @@ export const initialCategoryState: CategoryType = {
   articles: [],
   description: "",
   id: "",
+  indexTitle: "",
   mainImage: "",
   mainLabel: "",
   style: "",
