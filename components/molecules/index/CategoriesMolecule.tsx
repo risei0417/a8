@@ -1,7 +1,8 @@
 import { Pending } from "components/atoms/index/Pending";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { categoriesOperations } from "re-ducks/categories";
+import { indexOperations, indexSelectors } from "re-ducks/index";
+import { categoryOperations } from "re-ducks/category";
 import { AppDispatch, RootState } from "re-ducks/store";
 import { searchAgain } from "utils/time";
 import { useRouter } from "next/dist/client/router";
@@ -12,18 +13,20 @@ export const CategoriesMolecule = () => {
 
   const dispatch: AppDispatch = useDispatch();
 
-  const data = useSelector((state: RootState) => state.categories);
+  const selector = useSelector((state: RootState) => state);
+
+  const categories = indexSelectors.loadCategories(selector) ?? [];
 
   useEffect(() => {
-    if (searchAgain(data.lastSearched ?? 0)) {
-      dispatch(categoriesOperations.fetchDataList());
+    if (searchAgain(selector.index.lastSearched ?? 0)) {
+      dispatch(indexOperations.fetchDataList());
     }
     // eslint-disable-next-line
   }, []);
 
   return (
     <div>
-      {(data.list ?? []).map((category) => {
+      {categories.map((category) => {
         if (category.pending) {
           return <Pending key={category.id} title={category.title} />;
         }
@@ -31,7 +34,10 @@ export const CategoriesMolecule = () => {
         return (
           <div
             key={category.id}
-            onClick={() => router.push(`/common/${category.id}`)}
+            onClick={async () => {
+              await dispatch(categoryOperations.setCategory(category));
+              router.push(`/common/${category.id}`);
+            }}
           >
             <span>{category.title}</span>
             <picture>
