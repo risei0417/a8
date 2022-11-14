@@ -20,7 +20,7 @@ export const Pending = (props: Props) => {
         }}
         animate={{ border: [1, 0, 0] }}
       >
-        準備中
+        Coming Soon
         <motion.li
           animate={{ opacity: [1, 0, 0] }}
           transition={{

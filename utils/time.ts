@@ -3,7 +3,7 @@ export type TimeStamp = {
   _seconds?: number;
 }
 
-export const searchAgain = (milliseconds: number, diff: boolean = true) => {
+export const searchAgain = (milliseconds: number, diff = true) => {
   return diff && milliseconds + 3.6e6 < Date.now();
 };
 

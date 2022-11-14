@@ -7,10 +7,10 @@ const HomePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ホーム | {CommonConstant.APP_NAME}</title>
+        <title>Home | {CommonConstant.APP_NAME}</title>
         <meta
           name="description"
-          content="エンジニア・Webデザイナー向けの記事を投稿していきます。流行の言語やツールの紹介も更新していきます!"
+          content="For engineer Tips&Tricks"
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={CommonConstant.APP_IMAGE_URL} />
