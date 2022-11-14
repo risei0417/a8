@@ -15,7 +15,7 @@ export const Articles = (props: Props) => {
     <div id="articles" className={styles.articles}>
       <h2 className={styles.title}>Articles</h2>
       {dataList.length === 0 ? (
-        <div className="center">まだ記事がありません</div>
+        <div className="center">No Articles yet</div>
       ) : (
         <ol className={styles.list}>
           {dataList.map((article: CategoryArticleType) => {

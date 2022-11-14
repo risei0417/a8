@@ -12,7 +12,7 @@ export const _404 = () => {
           style={{ width: "100vw", height: "50vh", flexDirection: "column" }}
         >
           <strong style={{ fontSize: 31 }}>404</strong>
-          <span>お探しのページは見つかりませんでした</span>
+          <span>not found</span>
         </div>
       </main>
 
