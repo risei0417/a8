@@ -1,85 +1,35 @@
 @import "vars.scss";
 
-@media screen and (min-width: 1007px) {
-  .container {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    height: 21rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .welcome {
+.welcome {
+  background-image: url("/lp.webp");
+  background-size: cover;
+  height: 30rem;
+  width: 100%;
+  position: relative;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  h1 {
     font-size: 100px;
     position: absolute;
-    top: 6rem;
-    left: 6rem;
+    margin: 0;
+    top: 25%;
+    left: 10%;
   }
-
-  .box {
-    width: 3rem;
-    height: 3rem;
-    z-index: 1;
-  }
-}
-
-@media screen and (min-width: 640px) and (max-width: 1007px) {
-  .container {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    height: 14rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .welcome {
-    font-size: 80px;
+  b {
+    font-size: 50px;
     position: absolute;
-    top: 3rem;
-    left: 3rem;
-  }
-
-  .box {
-    width: 2rem;
-    height: 2rem;
-    z-index: 1;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .container {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    height: 6rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .welcome {
-    font-size: 40px;
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-  }
-
-  .box {
-    width: 1rem;
-    height: 1rem;
-    z-index: 1;
+    bottom: 15%;
+    right: 10%;
   }
 }
 
 .information {
-  margin: 2rem 2rem 5rem 2rem;
-  padding: 1rem;
+  padding: 2rem;
   height: 17rem;
-  box-shadow: $shadow;
   background-color: white;
 
   h2 {
+    font-family: "Times New Roman", Times, serif;
     height: 2rem;
     margin: 0;
   }
@@ -120,12 +70,11 @@
 }
 
 .categories {
-  margin: 2rem 2rem 0 2rem;
-  padding: 1rem;
-  box-shadow: $shadow;
-  background-color: white;
+  padding: 2rem;
+  background-color: snow;
 
   h2 {
+    font-family: "Times New Roman", Times, serif;
     height: 3rem;
     margin: 0;
   }
@@ -141,19 +90,20 @@
     }
 
     div {
+      background-color: ghostwhite;
+      box-shadow: 3px 7px 10px 5px gray;
       position: relative;
       border-radius: 1rem;
       width: 15rem;
       height: 15rem;
       overflow: hidden;
-      background-color: ghostwhite;
       opacity: 1;
 
       &:hover {
+        box-shadow: 3px 7px 10px 5px lightgray;
         background-color: aliceblue;
         opacity: 0.7;
         cursor: pointer;
-        box-shadow: $shadow;
       }
 
       img {
@@ -172,8 +122,4 @@
       }
     }
   }
-}
-
-.spacer {
-  height: 5rem;
 }
